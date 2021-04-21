@@ -1,0 +1,21 @@
+https://softwaretestingfundamentals.com/
+
+padrão AAA
+
+http://wiki.c2.com/?/ArrangeActAssert
+
+ARANGE (todas pre condicoes e entradas - cenário)
+
+ACT (o objeto ou metodo a testar)
+
+ASSERT (que resultados experrados devem ocorrer)
+
+Ou Padrão Given When Then
+
+https://martinfowler.com/bliki/GivenWhenThen.html
+
+
+Ou teste de unidade(unit test)
+
+http://wiki.c2.com/?/UnitTest
+
