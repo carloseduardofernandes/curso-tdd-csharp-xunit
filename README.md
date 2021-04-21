@@ -1,2 +1,4 @@
 # curso-tdd-csharp-xunit
-Curso alura
+Curso alura: 
+
+https://cursos.alura.com.br/course/tdd-csharp-xunit
