@@ -1,21 +1,32 @@
-https://softwaretestingfundamentals.com/
+Definição de Teste:
+http://softwaretestingfundamentals.com/definition-of-test/
 
-padrão AAA
-
+Padrão AAA (Arrange, Act, Assert) 
+ARANGE (todas pre condicoes e entradas - cenário)
+ACT (o objeto ou metodo a testar)
+ASSERT (que resultados experrados devem ocorrer)
 http://wiki.c2.com/?/ArrangeActAssert
 
-ARANGE (todas pre condicoes e entradas - cenário)
-
-ACT (o objeto ou metodo a testar)
-
-ASSERT (que resultados experrados devem ocorrer)
-
-Ou Padrão Given When Then
-
+Padrão Given/When/Then
 https://martinfowler.com/bliki/GivenWhenThen.html
 
+xUnit
+https://xunit.github.io/
 
-Ou teste de unidade(unit test)
+MSTests
+https://github.com/Microsoft/testfx-docs
 
+Teste de unidade(unit test)
 http://wiki.c2.com/?/UnitTest
 
+NUnit
+https://nunit.org/
+
+Comparativo entre os frameworks de Teste
+https://dev.to/hatsrumandcode/net-core-2-why-xunit-and-not-nunit-or-mstest--aei
+
+Porque xUnit?
+https://www.martin-brennan.com/why-xunit/
+
+Microsoft está usando o xUnit
+https://dev.to/hatsrumandcode/net-core-2-why-xunit-and-not-nunit-or-mstest--aei
