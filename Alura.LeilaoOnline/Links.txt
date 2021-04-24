@@ -36,3 +36,15 @@ a qual consiste em dividir os dados em várias partições para tornar os testes ma
 https://en.wikipedia.org/wiki/Equivalence_partitioning
 
 https://en.wikipedia.org/wiki/Boundary-value_analysis
+
+**** Classe Equivalência criar método com varias entradas(theory)
+### Facts são testes que são sempre verdades e testam coisas invariantes(nao dependem de valor de entrada);
+### Theory são testes que são verdades para um tipo particular de dados(mesmo codigo para varias condicoes de entrada);
+
+[InlineData] = dados recebidos via parametros(dados simples)
+[MemberData] = dados complexos
+
+### Best practices
+informar o GivenWhenThen,
+para tal colocar um nome da classe do teste o metodo que se esta testando(exemplo LeilaoTerminaPregao) = Given
+e o nome do metodo de teste o retorno esperado, dado cenario especifico (exemplo RetornaZeroDadoLeilaoSemLance)
