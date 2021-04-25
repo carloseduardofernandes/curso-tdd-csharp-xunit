@@ -9,6 +9,9 @@ namespace Alura.LeilaoOnline.Core
 
         public Lance(Interessada cliente, double valor)
         {
+            if (valor < 0)
+                throw new ArgumentException("Não lance não pode ser valor Nullo!");  
+
             Cliente = cliente;
             Valor = valor;
         }

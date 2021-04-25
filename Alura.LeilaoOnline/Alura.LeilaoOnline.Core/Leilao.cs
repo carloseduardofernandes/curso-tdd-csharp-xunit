@@ -14,23 +14,35 @@ namespace Alura.LeilaoOnline.Core
 
     public class Leilao
     {
+        private EstadoLeilao Estado { get; set; }
+        private Interessada _ultimoCliente { get; set; }
         private IList<Lance> _lances;
+        private IModalidadeAvaliacao _avaliador { get; }
         public IEnumerable<Lance> Lances => _lances;
         public string Peca { get; }
         public Lance Ganhador { get; private set; }
-        public EstadoLeilao Estado { get; set; }
 
-        public Leilao(string peca)
+        public Leilao(string peca, IModalidadeAvaliacao avaliador)
         {
             Peca = peca;
             _lances = new List<Lance>();
             Estado = EstadoLeilao.LeilaoCriado;
+            _avaliador = avaliador;
+        }
+
+        private bool LanceAceito(Interessada cliente, double valor)
+        {
+            return (Estado == EstadoLeilao.LeilaoEmAndamento) && 
+                (cliente != _ultimoCliente);
         }
 
         public void RecebeLance(Interessada cliente, double valor)
         {
-            if(Estado == EstadoLeilao.LeilaoEmAndamento)
+            if(LanceAceito(cliente, valor))
+            {
+                _ultimoCliente = cliente;
                 _lances.Add(new Lance(cliente, valor));
+            }
         }
 
         public void IniciaPregao()
@@ -40,11 +52,13 @@ namespace Alura.LeilaoOnline.Core
 
         public void TerminaPregao()
         {
-            Ganhador = Lances
-                .DefaultIfEmpty(new Lance(null, 0))
-                .OrderBy(l => l.Valor)
-                .LastOrDefault();
+            if (Estado != EstadoLeilao.LeilaoEmAndamento)
+            {
+                throw new InvalidOperationException($"Não é possível terminar o pregão sem ele ter sido começado." +
+                    $" Para isso, Utilize o método IniciaPregao()");
+            }
 
+            Ganhador = _avaliador.Avalia(this);
             Estado = EstadoLeilao.LeilaoFinalizado;
         }
     }

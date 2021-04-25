@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Alura.LeilaoOnline.Core;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xunit;
 
@@ -47,6 +49,37 @@ namespace AluraLeilaoOnline.Tests
 
             //Assert
             Assert.Equal(resultadoEsperado, resultadoObtido);
+        }
+
+        /// <summary>
+        /// Dado um leilão ainda sem ter iniciado um pregão
+        //  Quando leilão recebe qualquer quantidade de lances
+        //  Então tais lances serão ignorados pelo leilão
+        /// </summary>
+        /// <param name="lance"></param>
+        [Theory]
+        [InlineData(new double[] { 200, 400, 500 }, 0)]
+        [InlineData(new double[] { 200 }, 0)]
+        public void IgnoraLancesDadoLeilaoComPregaoNaoIniciado(double[] lances, int qtdLancesEsperada)
+        {
+            //Arranje - cenário
+            IModalidadeAvaliacao modalidade = new MaiorValor();
+            var leilao = new Leilao("Van Gogh", modalidade);
+            var fulano = new Interessada("Fulano", leilao);
+            //leilao.IniciaPregao();
+
+            //Act - método sob teste
+            foreach (var lance in lances)
+            {
+                leilao.RecebeLance(fulano, lance);
+            }
+
+           // leilao.TerminaPregao();//se nao começou precisa terminar?
+
+            //Assert - valor esperado
+            var qtdObtida = leilao.Lances.Count();
+
+            Assert.Equal(qtdObtida, qtdLancesEsperada);
         }
     }
 }

@@ -1,0 +1,131 @@
+Definição de Teste:
+http://softwaretestingfundamentals.com/definition-of-test/
+
+Padrão AAA (Arrange, Act, Assert) 
+ARANGE (todas pre condicoes e entradas - cenário)
+ACT (o objeto ou metodo a testar)
+ASSERT (que resultados experados devem ocorrer)
+http://wiki.c2.com/?/ArrangeActAssert
+
+Padrão Given/When/Then
+https://martinfowler.com/bliki/GivenWhenThen.html
+
+xUnit
+https://xunit.github.io/
+
+MSTests
+https://github.com/Microsoft/testfx-docs
+
+Teste de unidade(unit test)
+http://wiki.c2.com/?/UnitTest
+
+NUnit
+https://nunit.org/
+
+Comparativo entre os frameworks de Teste
+https://dev.to/hatsrumandcode/net-core-2-why-xunit-and-not-nunit-or-mstest--aei
+
+Porque xUnit?
+https://www.martin-brennan.com/why-xunit/
+
+Microsoft está usando o xUnit
+https://dev.to/hatsrumandcode/net-core-2-why-xunit-and-not-nunit-or-mstest--aei
+
+ classes de equivalência 
+a qual consiste em dividir os dados em várias partições para tornar os testes mais eficientes.
+https://en.wikipedia.org/wiki/Equivalence_partitioning
+
+https://en.wikipedia.org/wiki/Boundary-value_analysis
+
+https://www.scrum.org/resources/what-is-a-product-owner
+
+**** Classe Equivalência criar método com varias entradas(theory)
+### Facts são testes que são sempre verdades e testam coisas invariantes(nao dependem de valor de entrada);
+### Theory são testes que são verdades para um tipo particular de dados(mesmo codigo para varias condicoes de entrada);
+
+[InlineData] = dados recebidos via parametros(dados simples)
+[MemberData] e [ClassData] = dados complexos
+
+https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/
+
+### Best practices
+informar o GivenWhenThen entre classe e nome metodo,
+para tal colocar um nome da classe do teste o metodo que se esta testando(exemplo LeilaoTerminaPregao) = Given
+e o nome do metodo de teste o retorno esperado e oque se foi dado de entrada(cenario especifico)
+(exemplo RetornaZeroDadoLeilaoSemLance)
+
+Nomenclatura de testes
+https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#best-practices
+
+https://docs.microsoft.com/pt-br/dotnet/standard/modern-web-apps-azure-architecture/test-asp-net-core-mvc-apps#test-naming
+
+Diferença entre [Fact] e [Theory]
+https://xunit.github.io/docs/getting-started/netfx/visual-studio#write-first-theory
+
+TDD (fazer os teste antes e depois o codificação)
+
+Ciclo TDD: escrever testes que falhem >> corrigir os testes ajustando código de produção >> refatorar o código
+
+Metodo privado somente testa quando é chamado em método público
+
+Testes de regressão
+http://softwaretestingfundamentals.com/regression-testing/
+
+Intro a Métodos Ágeis na Alura
+https://cursos.alura.com.br/course/introducao-aos-metodos-ageis
+
+Livro TDD By Example, de Kent Beck
+https://www.amazon.com.br/Test-Driven-Development-Kent-Beck/dp/0321146530/
+
+Livro sobre TDD na Casa do Código
+https://www.casadocodigo.com.br/products/livro-tdd-dotnet
+
+Testes de métodos privados
+https://docs.microsoft.com/pt-br/dotnet/core/testing/unit-testing-best-practices#validate-private-methods-by-unit-testing-public-methods
+
+Tratando exceções no xUnit
+
+Assert.IsType<System.InvalidOperationException>(e); (maneira menos elegante);
+
+Assert.Throws<System.InvalidOperationException>(
+                //Act - método sob teste
+                () => leilao.TerminaPregao()
+            ); = (Maneira elegante);
+
+Tratar a mensagem da exceção: 
+
+var excecaoObtida = Assert.Throws<System.InvalidOperationException>(
+                //Act - método sob teste
+                () => leilao.TerminaPregao()
+            );
+
+var msgEsperada = "Não é possível terminar o pregão sem ele ter sido começado. Para isso, Utilize o método IniciaPregao()";
+Assert.Equal(msgEsperada, excecaoObtida.Message);
+
+Visual Studio tem uma ferramenta de cobertura de código, mas infelizmente apenas nas suas versões pagas.
+
+https://docs.microsoft.com/en-us/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested
+
+Artigo sobre importancia de cobertura do teste
+https://www.martinfowler.com/bliki/TestCoverage.html
+
+Definição de interface de classes:
+
+https://en.wikipedia.org/wiki/Object-oriented_design
+
+https://en.wikipedia.org/wiki/Object-oriented_design
+
+Solid
+https://en.wikipedia.org/wiki/SOLID
+
+Single responsibility principle
+Open/close principle
+Liskov substitution principle
+Interface segregation principle
+Dependency inversion principle
+
+Design OO, Interfaces e Implementação
+https://en.wikipedia.org/wiki/Object-oriented_design
+
+Princípios de Design: SOLID
+https://en.wikipedia.org/wiki/SOLID

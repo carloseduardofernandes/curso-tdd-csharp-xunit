@@ -7,14 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9A15DCA-27B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EDB6F154-7050-4971-B662-D34E4B591E97}"
 	ProjectSection(SolutionItems) = preProject
-		Links.txt = Links.txt
+		Links e anotacoes.txt = Links e anotacoes.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alura.LeilaoOnline.Core", "Alura.LeilaoOnline.Core\Alura.LeilaoOnline.Core.csproj", "{3029DF9D-9C6A-4017-9785-2A669A3DAC1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alura.LeilaoOnline.ConsoleApp", "Alura.LeilaoOnline.ConsoleApp\Alura.LeilaoOnline.ConsoleApp.csproj", "{BBAB3FE1-70F0-459D-B781-E8E095E00D91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alura.LeilaoOnline.ConsoleApp", "Alura.LeilaoOnline.ConsoleApp\Alura.LeilaoOnline.ConsoleApp.csproj", "{BBAB3FE1-70F0-459D-B781-E8E095E00D91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluraLeilaoOnline.Tests", "AluraLeilaoOnline.Tests\AluraLeilaoOnline.Tests.csproj", "{DB9A8FE3-82A1-4D62-9D15-51DDE93AB8D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AluraLeilaoOnline.Tests", "AluraLeilaoOnline.Tests\AluraLeilaoOnline.Tests.csproj", "{DB9A8FE3-82A1-4D62-9D15-51DDE93AB8D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
